@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- event binding de v-on:click ya da @ işareti yani @click gibi, 
+         attr. binding de v-bind:href ya da : yani :href gibi -->
+
+        <!-- Attribute'lar HTML tag'leri hakkında ek bilgi sağlar. -->
+
+    <!-- Directive nedir? Bir elementin yapısını şeklini davranış biçimini değiştiren işlevsel yani dinamik attr. parçacıklarıdır.  v- ön ekine sahip özel attrler gibi kendisine özgü directiveleri vardır ve ayrıca özel directiveler de tanımlayabiliriz.
+    
+    Bu directiveler, Vue.js uygulamalarının şablonlarında kullanılarak, veri bağlama (data binding) ve DOM manipülasyonu (eventlerle) gibi işlemleri gerçekleştirmenizi sağlar.
+    
+    -->
+    <!--
+         v-x.... gibi ise view directive oluyor. 
+        v-on: eventi bağlar => v-on:click gibi ya da @click="deneme"
+        v-bind: attr. değerini bağlar => v-bind:href gibi ya da :href="myTitle.url" gibi
+
+        v-model => data içindeki bir değer ile çalışır. v-model verdiğimizde event ve directive bindingi kendisi otomatik yapıyor. Bizim eventi ve attr. yazmamıza gerek kalmıyor. Set ve Geti kendi hallediyor
+    
+    
+    -->
+
+    <div id="app">
+        <div class="row mt-5">
+            <div class="col-4 offset-4">
+                <h3 class="text-center">Event</h3>
+
+                <input type="text" @keydown.enter="updateValue" v-model="fullName">
+                <!-- @keydown.enter burada enter Event Modifiers olarak geçiyor. yani entera bastığında ya da  @click.once bir kez tıklandığında gibi  -->
+
+                <input @input="updateValue" type="text" class="form-control" :value="fullName"> <!-- Yani bir şeyler girdiğimdeki event input --> <br> 
+               
+                <!-- biz niye metotlarda parantez kullanmıyoruz çünkü parantez kullanırsak ben yapıcam demiş oluyorsun ,
+                vue jse bırakmamış oluyorsun. Parametresiz fonks. için diyorum bunu -->
+                <input type="text" class="form-control" v-model="fullName"> <br>
+
+                {{fullName}}
+
+                <button class="btn btn-primary btn-sm">Ekle</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

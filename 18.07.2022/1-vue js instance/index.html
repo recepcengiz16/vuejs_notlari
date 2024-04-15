@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script> <!--cdn dosyası yani script dosyası, yukarıda olmalı aşağıda olunca vue 2 de o-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">  <!--Bütün applicationı kapsayan div hani bootsrap de container gibi düşün-->
+
+
+        <!-- {{changeTitle('Bu bambaşka bir olaydır.')}} metot template içinde de çalıştırılabilir. Aynı bu şekilde. -->
+
+       <!--Html kısmı template oluyor-->
+        <h1>{{title}}</h1> <!-- süslü parantezler, string interpolation yani c# tarafında $"merhaba {id}" gibi düşün. stting interpolation text contentinin olduğu yerlerde çalışır. Yani tagin açma ve kapama arasında çalışır.  -->
+        <p>{{content}}</p>
+        <a v-bind:href="url"></a> <!-- attr. değerini kontrol etmek için v-bind:, vue js de bulunan url ile bind et, eşleştir yani  -->
+        <!-- v-bind bir directive yani verimiz dinamik olduğunda bunu ekrana yazdırmak için direktiflerden yararlanmamız gerekmektedir.
+        
+        Kısa yazma tekniği
+        Bir attr. bind etmek istiyorsak ve v-bind kullanıyorsak “v-bind:” yerine sadece “:” kullanabiliriz.
+        
+        -->
+
+        {{merhaba()}} <!-- fonks string interpolitionda parantezle çağırmamız gerekli -->
+
+        <a v-bind:href="myLink.url" :target="myLink.target" :alt="myLink.alt" :kablosuzkedi="owner">{{myLink.title}}</a>
+        <br/><br/>
+        <button v-on:click="changeTitle('Napaysun?')"> Title Değiştir.. </button> &nbsp;
+        <button v-on:click="changeTitle('Deneme yapayrum')"> Title Değiştir.. </button>
+
+        <div class="box" @mousemove="updateCoords('Merhaba',$event)" @click="changeTitle('Box üzerinden gelen')"></div>
+        <!-- parametre göndermezsek updatecoords dersek sadece, otomatik eventi de gönderiyor kendisi, parametre de göndermek istersek $event ile eventi göndermiş oluyoruz. -->
+        
+        <span> {{coords.x}} {{coords.y}} </span>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

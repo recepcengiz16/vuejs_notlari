@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Component yapısı: Vue js de componentler dediğimiz tekrar edilen bölümlerdir aslında htmlde. Yani header footer gibi her sayfada tekrar eden şeyler.
+    
+        Kendi küçük dünyasında çalışan küçük vue uygulaması olarak düşünülebilir.
+
+        Normal vue uygulamasının sahip olduğu her şeye sahiptirler(data,methods,reactive properties(computed,watch)),
+        Life cycle hooks gibi,
+
+        Neler component yapısına dönüştürülmelidir:
+        1)Tekrar edilen GUI parçaları(gördüğümüz ara yüzdeki header footer)
+        2)İçerisinde kendisine ait servis bağlantısı bulunduran gui parçaları(bizim servisimizle alakası olamayan başka bir servisten verieri alan mesela döviz kurları)
+        3) Template yapısına uygun proje yapıyorsanız, tüm UI elementleri(form,button,slider,menu,header,footer her şey)
+
+        options=> component içinde kullancağımız vue instance yapıları
+
+        tekrar eden html kodlarını template içerisinde set ederiz.
+
+        Component türleri => String template component, single file component
+
+       
+    -->
+
+        <div id="app">
+            <div class="container">
+                <counter-item></counter-item>
+                <who></who>
+            </div>
+        </div>
+
+
+</body>
+</html>

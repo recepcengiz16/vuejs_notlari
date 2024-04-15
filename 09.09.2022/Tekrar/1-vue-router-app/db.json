@@ -1,0 +1,16 @@
+{
+  "bookmarks": [
+    {
+      "title": "Twitter",
+      "url": "https://www.twitter.com.tr",
+      "description": "Twitter",
+      "id": 1
+    },
+    {
+      "title": "Merhaba",
+      "url": "merhaba",
+      "description": "Deneme",
+      "id": 2
+    }
+  ]
+}

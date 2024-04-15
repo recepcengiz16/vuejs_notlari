@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "username": "mellon",
+      "fullname": "Recep CENGİZ",
+      "password": "0172d67efcb240d5d1d16c88f7587822cb5b8c2f",
+      "id": 1
+    }
+  ],
+  "user_likes": [
+    {
+      "userId": 1,
+      "bookmarkId": 1,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 6,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 16,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 9,
+      "id": 6
+    }
+  ],
+  "user_bookmarks": [
+    {
+      "userId": 1,
+      "bookmarkId": 6,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 16,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 9,
+      "id": 6
+    }
+  ],
+  "bookmarks": [
+    {
+      "title": "Vue Docs",
+      "url": "https://v3.vuejs.org",
+      "categoryId": 1,
+      "description": "Dünyanın en güzel framework'ü",
+      "userId": 1,
+      "created_at": "2021-08-26T18:57:24.821Z",
+      "id": 1
+    },
+    {
+      "title": "Frontend Masters",
+      "url": "http://...",
+      "categoryId": 3,
+      "description": "Çok güzel bir kaynak..",
+      "userId": 1,
+      "created_at": "2021-08-26T19:00:35.404Z",
+      "id": 2
+    },
+    {
+      "title": "AWS",
+      "url": "https:///aws",
+      "categoryId": 5,
+      "description": "çok güzel",
+      "userId": 1,
+      "created_at": "2021-08-26T19:01:12.447Z",
+      "id": 3
+    },
+    {
+      "title": "Güzel Müzikler",
+      "url": "https://...",
+      "categoryId": 6,
+      "description": "çok güzel müzikler ama gerçekten çok güzel..",
+      "userId": 1,
+      "created_at": "2021-08-26T19:11:23.114Z",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name":"Vue.js",
+      "id":1
+    },
+    {
+      "name":"React.js",
+      "id":2
+    },
+    {
+      "name":"Frontend",
+      "id":3
+    },
+    {
+      "name":"Backend",
+      "id":4
+    },
+    {
+      "name":"Cloud",
+      "id":5
+    },
+    {
+      "name":"Sosyal yaşam",
+      "id":6
+    }
+
+  ]
+}

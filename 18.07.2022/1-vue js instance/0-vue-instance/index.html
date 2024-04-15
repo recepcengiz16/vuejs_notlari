@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script> <!--cdn dosyası yani script dosyası, yukarıda olmalı aşağıda olunca vue 2 de o-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">  <!--Bütün applicationı kapsayan div hani bootsrap de container gibi düşün-->
+        <!-- Directive küçük küçük tanımlamalar ile vue instanceına iş yaptırmayı sağlayan yapılardır. -->
+
+        <!-- {{changeTitle('Bu bambaşka bir olaydır.')}} metot template içinde de çalıştırılabilir. Aynı bu şekilde. -->
+
+        <p v-once>{{title}}</p> <!-- bir kere çalıştıryor daha sonra render etmiyor. -->
+        <p v-html="myLink.url"></p><!-- diyelim ki bu(myLink.url) bir a tagi ve html olduğu için v-html directive i ile çağırıyoruz. -->
+
+        <input type="text" v-model="todoText" @keydown.enter="addTodo">
+        {{changeTitle()}} <!-- string interpolationda fonksiyonu düz çağıramıyorsun. parantez kullanman gerekli.
+        
+            Süslü parantezler arasındaki veriyi vue instance string olarak atar
+
+            
+        -->
+        <ul>
+            <li v-for="todo in todoList">{{todo}}</li>
+        </ul>
+
+       <!--Html kısmı template oluyor-->
+        <h1>{{title}}</h1> <!-- süslü parantezler, string interpolation yani c# tarafında $"merhaba {id}" gibi düşün. string interpolation text contentinin olduğu yerlerde çalışır. Yani tagin açma ve kapama arasında çalışır.  -->
+        <p>{{content}}</p>
+        <a v-bind:href="myLink.url"></a> <!-- attr. değerini kontrol etmek için v-bind:, vue js de bulunan url ile bind et, eşleştir yani  -->
+        <!-- v-bind bir directive yani verimiz dinamik olduğunda bunu ekrana yazdırmak için direktiflerden yararlanmamız gerekmektedir.
+        
+        Kısa yazma tekniği
+        Bir attr. bind etmek istiyorsak ve v-bind kullanıyorsak “v-bind:” yerine sadece “:” kullanabiliriz.
+        v-model da set ve getini ayarlamamızı sağlıyor.
+        -->
+
+        <a v-bind:href="myLink.url" :target="myLink.target" :alt="myLink.alt" :kablosuzkedi="owner">{{myLink.title}}</a>
+        <br/><br/>
+        <button v-on:click="changeTitle('Napaysun?',$event)"> Title Değiştir.. </button> &nbsp;
+        <button v-on:click="changeTitle('Deneme yapayrum' , $event)"> Title Değiştir.. </button>
+
+        <div style="background-color: aqua;width: 50px;height: 50px;" @mousemove="updateCoords('Merhaba',$event)" @click="changeTitle('Box üzerinden gelen')"></div>
+        <!-- parametre göndermezsek updatecoords dersek sadece, otomatik eventi de gönderiyor kendisi, parametre de göndermek istersek $event ile eventi göndermiş oluyoruz. Eventi yakalamak istersek $event yazıyoruz yoksa $event yazmamız gerekli değil -->
+        
+        <!-- 
+            vue js watch edip update(render) ediyor yani dom yapısı değişmişmi bakıyor ve değişiklik olan yerleri update ediyor.  
+            Bunu da virtual dom ile yapıyor. Virtual dom domun bir kopyası. Vue instance da bir değişiklik varsa virtual dom bunu doma yansıtıyor.  Sanal dom ile dom üzerindeki değişikliklere bakılır, ve tespit edilen değişiklikler alınarak gerçek dom üzerine eklenirler.
+         -->
+
+
+        <span> {{coords.x}} {{coords.y}} </span>
+
+    </div>
+    
+   
+
+    <script src="app.js"></script>
+</body>
+</html>

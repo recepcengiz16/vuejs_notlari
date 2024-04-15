@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app" class="container">
+      <!--
+
+
+        class için => ['class adı','class adı'] => ['red','kenarlik'] , [activeClass,errorClass] 
+                       // birden fazla şart olmadan ise dizi şeklinde
+                       
+                       //şarta bağlı ise süslü parantez { key(classın adı): value(şart) }
+                       
+                       {class adı : vue jsdeki property adı} => { kenarlik:showBorder , red: redBG } 
+                       //birden fazla class yazmak için
+                      
+                       class:şart(true/false) =>  {'text-center': counter > 2 } niye tek tırnak yaptık tire(-) js tarafında key olarak kullanılamıyor arasında tire(-) olunca.
+                                           
+                      class: computed (gelen bu değer de obje) => :class="boxClasses(computed değişkeni)" 
+                     
+                      <div :class="[{ active: isActive }, errorClass]"></div> // obje ile property de olabilir dizinin içinde
+
+        style için => {style adı : vue js propert adı} => {backgroundColor:bgColor}, {backgroundColor:'blue'} //obje
+                      [{color: 'red',fontSize: '13px'},{}] //obje dizisi arada tire felan varsa 'background-color' gibi tırnak içinde yazabiliriz.
+                      <div  :style="customStyle"> => computed
+      -->
+    
+
+      {{showBorder}}
+
+      <br>
+      <input type="text" v-model="bgColor">
+
+      {{bgColor}}
+
+      <button @click="showBorder=!showBorder">Border Ekle/Ekleme</button>
+      <button @click="redBG=!redBG">Border Ekle/Ekleme</button>
+      <p></p>
+      <div class="box" :class="['red','kenarlik']"> <!-- farklı bir class ekleme yöntemi -->
+        
+      </div>
+      <p></p>
+      <div class="box" :class="boxClasses"><!-- computed -->
+        
+      </div>
+      <div class="box" :style="{backgroundColor:bgColor}" :class="{kenarlik:showBorder , red: redBG}"> <!-- showbordera göre yani şarta göre kenarlik classını ekleyecek ya da eklemeyecek -->
+
+      </div>
+      <div class="box" :style="[{},{}]" :class="boxClasses"> <!-- classı uzun uzun yazmaktansa copmuted ile de yazabiliriz. style da dizinin içinde objeler şeklinde olabilir.  -->
+        
+      </div>
+
+      <div :style="customStyle">
+          deneme
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

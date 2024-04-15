@@ -1,0 +1,8 @@
+Option api de data içerisinde oluşturduğumuz bütün yapılar mounted dan önce reactivitysi ile bearaber geliyorlar.
+Gereksiz bir sürü değişken olmuş oluyor olmaması gerekenler bile. Mesela başlıkdaki değişken gibi. Bu da projeye yük bindiriyor. Burada composition apide diyelim müşteri ile bilgileri başka dosyada tutayım. Bu şekilde karmaşıklığı azaltmış oluyorsun.
+
+Bizim logicimizi, methodlar,computedlar vs bunları ayırmaya composable deniliyor
+
+Option API Vue.js'nin eski sürümlerinde kullanılan ve basit bileşenlerin oluşturulması için kullanılan bir API'dir. Composition API ise Vue.js 3.0 ile tanıtılan ve daha büyük ölçekli projelerde kodun daha iyi organize edilmesini ve yeniden kullanılmasını sağlayan daha esnek bir API'dir.
+
+Vite ise normalde browserın anlayacağı yapıları babel ile browserın anlayacağı yapıya çevrimini yapardık. Fakat şimdi browserlar biraz daha geliştiği için şu an vite ile browserın yapacağı işi browsera bırakıyor, kendi development serverda ne kadar min gereksinim varsa onu halledelim diyor. Bu yüzden hızlı
