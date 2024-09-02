@@ -33,6 +33,21 @@ const routes=[
         components:{
             default: import("@/views/Home.vue"),
             "header-top": import("@/views/Details.vue")
+            /*
+                <template>
+                    <div>
+                        <router-view name="header-top"></router-view>
+                        <router-view></router-view> <!-- Bu default view olacak -->
+                    </div>
+                </template>
+
+                Bu örnekte:
+
+                default: Bu, ana (default) router-view içerisinde render edilecek componenttir. Yani bu rota ("/") ziyaret edildiğinde, @/views/Home.vue componenti varsayılan olarak gösterilir.
+                
+                header-top: Bu ise, header-top isimli bir router-view içerisine render edilecek componenttir. @/views/Details.vue componenti bu isimli router-view alanında gösterilecektir.
+            
+            */
         }
     }
 ]
