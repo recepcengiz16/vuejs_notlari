@@ -14,9 +14,9 @@ import UserSection from "@/components/UserSection.vue";
   export default{
     data() {
         return {
-            // userList: ["İsmail","Lütfiye","Recep","Emin","Rukiye"]
+            // userList: ["İsmail","Lütfiye","Recep","Ceylan","Emin","Rukiye"]
             provideData:{
-                userList: ["İsmail","Lütfiye","Recep","Emin","Rukiye"]
+                userList: ["İsmail","Lütfiye","Recep","Ceylan","Emin","Rukiye"]
             }
         };
     },
