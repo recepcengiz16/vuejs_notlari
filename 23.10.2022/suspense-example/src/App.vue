@@ -30,15 +30,17 @@ import {onErrorCaptured,ref,defineAsyncComponent} from "@vue/runtime-core";
  //import Todos from "./components/Todos.vue";
  //import Users from "./components/Users.vue";
 
+//suspense yaparken ille de async olarak import etmeye gerek yok componentleri
+
 const err=ref(null);
- const Todos= defineAsyncComponent(()=>import("./components/Todos.vue")); //Biz defineAsyncComponent ile bu şekilde componentlerimizi dinamik olarak yükleeyebiliyoruz
+const Todos= defineAsyncComponent(()=>import("./components/Todos.vue")); //Biz defineAsyncComponent ile bu şekilde componentlerimizi dinamik olarak yükleeyebiliyoruz
 
- const Users=defineAsyncComponent(()=> import("./components/Users.vue"));
+const Users=defineAsyncComponent(()=> import("./components/Users.vue"));
 
- onErrorCaptured((e) => { //Asenkron element yüklenirken hata oluştuğunda bu method çalışır.
-  //err.value=e.message;
-    err.value=e;
-    return true;
- });
+onErrorCaptured((e) => { //Asenkron element yüklenirken hata oluştuğunda bu method çalışır.
+//err.value=e.message;
+  err.value=e;
+  return true;
+});
 
 </script>
