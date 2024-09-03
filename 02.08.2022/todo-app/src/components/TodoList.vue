@@ -25,7 +25,7 @@ export default {
     // },
     // props:{
     //     myData:{
-    //         type:String,
+    //         type:Array,
     //         required:false,
     //         default:""
     //     }
