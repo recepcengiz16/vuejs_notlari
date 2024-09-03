@@ -19,7 +19,10 @@ const app = Vue.createApp({
     },
     watch:{ //normalde biz fonks. şeklinde yazmamız gerekliydi itemlisti fakat primitif tiplerde fonks şeklinde yazarız. referans tipli olunca obje şeklinde yazıyoruz.
         itemList:{
-            deep:true, //bu arkadaşı(itemlist) izlemek için deep keyi true olacak ve 
+            deep:true, //bu arkadaşı(itemlist) izlemek için deep keyi true olacak,
+            
+            // deep seçeneği olmadan, watcher sadece değişkenin referansını izler, yani değişkenin iç yapısındaki değişiklikler algılanmaz. deep=false olması yeni bir atama yapılmış mı(const deger = newDeger gibi) diye bakar manasında , true olunca dizi veya nesnenin içindeki değişime bakar.
+
             handler(newList){ //handler da itemlist değiştiği anda olacak işlem oluyor.
                 console.log("itemlist:",newList);
                 /*
