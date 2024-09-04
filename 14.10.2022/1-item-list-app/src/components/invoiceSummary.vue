@@ -15,7 +15,7 @@
 
   <script setup>
 
-  import { computed } from "vue";
+  import { computed, defineProps } from "vue";
   const props = defineProps({ items: Array });
   const subTotal = computed(() => props.items.reduce((t, i) => t + i.total_price, 0));
   const taxTotal = computed(() => subTotal.value * 0.18);
