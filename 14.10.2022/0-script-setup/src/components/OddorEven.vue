@@ -9,7 +9,7 @@
 <script setup>
     import {computed,watch} from "vue";
 
-    const props=defineProps({counter:Number});
+    const props=defineProps({counter:Number}); //script setup: Vue 3'ün script setup API'si, setup aşamasında kullanılan defineProps, defineEmits, defineExpose gibi fonksiyonları otomatik olarak tanır ve bu nedenle bunları import etmeniz gerekmez.
     const emit=defineEmits();
 
     const result=computed(()=>(
