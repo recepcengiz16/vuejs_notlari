@@ -6,6 +6,16 @@ const app = Vue.createApp({
         
         //Gerçek DOM render edildiğinde, virtual DOM ile eşittir. Virtual DOM’da bir değişiklik meydana geldiğinde, gerçek DOM’a sadece değişikliğe konu alanlar yansıtılır ve her iki DOM tekrar birbirine eşitlenmiş olur.
 
+        /*
+            Kısaca süreç şöyle işler:
+
+            İzleme (Tracking): Vue, uygulama durumundaki değişiklikleri izler ve bu değişikliklere bağlı olarak virtual DOM'da güncellemeler yapar. Bu izleme süreci, hangi verilerin ve bileşenlerin değiştiğini anlamak için "reaktif sistem" üzerinden yürütülür.
+
+            Yansıtma (Rendering): virtual DOM'da değişiklikler olduğunda, Vue, güncellenmiş virtual DOM ve eski virtual DOM arasında bir "diffing" (fark) işlemi yapar. Bu işlemde, yalnızca değişen bölümler belirlenir.
+
+            Gerçek DOM'a Güncelleme: Vue yalnızca fark edilen değişiklikleri gerçek DOM'a uygular, böylece tüm DOM'u yeniden render etmek yerine minimum düzeyde güncelleme yapılır. Bu işlem, performansı artırır ve tarayıcıda daha hızlı bir kullanıcı deneyimi sağlar.
+        */
+
         return {
             title:"recep",
             content:null,
